@@ -7,17 +7,21 @@ Output : [0, 0, 0, 1, 1, 1, 1, 1]
 */
 
 const sortBitArray = (bits) => {
-    const count = [0, 0];
+    let zeroCount = 0;
 
     for (const bit of bits) {
-        count[bit]++;
+        if (!bit) zeroCount++;
     }
 
-    for (let i = 0; i < count[0]; i++) {
+    if (zeroCount === 0 || zeroCount === bits.length) {
+        return bits;
+    }
+
+    for (let i = 0; i < zeroCount; i++) {
         bits[i] = 0;
     }
 
-    for (let i = count[0]; i < bits.length; i++) {
+    for (let i = zeroCount; i < bits.length; i++) {
         bits[i] = 1;
     }
 

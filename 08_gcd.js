@@ -6,6 +6,12 @@ Output:26
 In mathematics, the GCD of two integers is the largest positive integer that is a factor of both integers. In the case both 52 and 78 are divisible by 26. Which also happens to be the largest common factor as well.
 
 Euclids’s algorithm uses decrease an conquer to converge at the GCD faster than the prime factorization approach. The basis for Euclid’s algorithm is that the GCD of two numbers must be a factor of its difference as well.
+
+In the example above: 78 - 52 = 26, the GCD must be a factor of 26 as well. Another way to put it is the GCD(78, 52) must also equal to the GCD(52, 26) and/or the GCD(78, 26).
+
+GCD(b,a−b)  if a > b
+GCD(a,b−a) if b > a
+a if a = b
 */
 
 /* Time Complexity: O(log min(num1, num2))*/
